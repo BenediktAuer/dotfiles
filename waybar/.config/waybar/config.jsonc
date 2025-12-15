@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock"],
+  "modules-right": ["network","cpu","memory", "pulseaudio","tray", "clock"],
   "clock": {
     "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
@@ -22,9 +22,17 @@
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}"
   },
+
+"cpu": {
+        "format": "{usage}% ",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{}% "
+    },
   "network": {
     "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>  </span>{ifname}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
     "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
@@ -35,6 +43,23 @@
       "format-icons": {
           "default": ["", "", " "]
       },
-      "on-click": "pavucontrol"
-  }
+      "on-click": "pavucontrol",
+	"on-click-middle": "headsetcontrol -l 0"
+  },
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             //"4": "",
+             //"5": "",
+             "urgent": "",
+             "active": "",
+             "default": ""
+         }
+     }
 }
