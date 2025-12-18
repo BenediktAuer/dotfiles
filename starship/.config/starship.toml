@@ -4,7 +4,9 @@ format = """
 [](surface0)\
 $os\
 $username\
-[](bg:peach fg:surface0)\
+[](bg:red fg:surface0)\
+$conda\
+[](fg:red bg:peach)\
 $directory\
 [](fg:peach bg:green)\
 $git_branch\
@@ -93,6 +95,8 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+
+
 [username]
 show_always = true
 style_user = "bg:surface0 fg:text"
@@ -177,8 +181,15 @@ time_format = "%R"
 style = "bg:peach"
 format = '[[  $time ](fg:mantle bg:purple)]($style)'
 
-[line_break]
+[conda]
 disabled = false
+ignore_base = false
+style = "bg:mantle"
+format = '[[ $symbol$environment ](bg:red fg:base)]($style)'
+
+
+[line_break]
+disabled = true
 
 [character]
 disabled = false
