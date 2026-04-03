@@ -103,23 +103,22 @@
     {
       "name": "Power Managment",
       "type": "command",
-      "alias": "ex",
       "priority": 1,
       "args": {
         "commands": {
             "poweroff": {
                 "icon": "power-off-solid",
-                "exec": "{terminal} hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'",
+                "exec": "hyprshutdown -t \"Shutting down...\" --post-cmd \"shutdown -P 0\"",
                 "search_string": "poweroff"
                             },
                 "reboot": {
                 "icon": "arrow-rotate-right-solid",
-                "exec": "{terminal} hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'",
+                "exec": "hyprshutdown -t \"Shutting down...\" --post-cmd \"shutdown -P 0\"",
                 "search_string": "reboot"
                             },
                 "log out": {
-                  "icon": "arrow-right-from-bracket-solid",
-                  "exec": "{terminal} hyprshutdown ",
+                  "icon":"arrow-right-from-bracket-solid",
+                  "exec": "hyprshutdown",
                   "search_string": "logout"
                             }
 
